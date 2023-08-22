@@ -3,7 +3,7 @@ import { db } from './database';
 
 const app = express();
 
-app.use(express.json())
+app.use(express.json());
 
 app.get('/', (req, res)=>{
     res.send('Hello from the server. Powered by PostgresQL in association with Prisma and Kysely');
