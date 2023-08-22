@@ -1,0 +1,20 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator kysely {
+  provider = "prisma-kysely"
+  output = "../src/db"
+  fileName = "types.ts"
+  enumFileName = "enums.ts"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Todo{
+  id Int @id @default(autoincrement())
+  title String
+}
+
